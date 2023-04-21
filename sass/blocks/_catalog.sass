@@ -1,98 +1,167 @@
 .catalog
-    padding-bottom: 100px
+	padding-bottom: 100px
 
-    &__tabs
-        list-style-type: none
-        margin-bottom: 0
-        margin-top: 50px
-        padding-left: 0
-        display: flex
-        justify-content: center
+	&__tabs
+		list-style-type: none
+		margin-bottom: 0
+		margin-top: 50px
+		padding-left: 0
+		display: flex
+		justify-content: center
 
-    &__tab
-        text-align: center
-        width: 220px
-        height: 50px
-        border: 2px solid $c3-gray
-        line-height: 50px
-        font-weight: 400
-        font-size: 18px
-        text-transform: uppercase
-        color: #6B6B6B
-        transform: skewX(-25deg)
-        margin: 0 5px
-        cursor: pointer
-        transition: 0.5s all
-        div
-            transform: skewX(25deg)
-        &:hover
-            box-shadow: 3px 3px 20px $mc1
-            border: 2px solid $mc1
+	&__tab
+		text-align: center
+		width: 220px
+		height: 50px
+		border: 2px solid $c3-gray
+		line-height: 50px
+		font-weight: 400
+		font-size: 18px
+		text-transform: uppercase
+		color: #6B6B6B
+		transform: skewX(-25deg)
+		margin: 0 5px
+		cursor: pointer
+		transition: 0.5s all
+		div
+			transform: skewX(25deg)
+		&:hover
+			box-shadow: 3px 3px 20px $mc1
+			border: 2px solid $mc1
 
-    &_active
-        background-color: $mc1
-        color: #FFFFFF
-        border: none
-        &:hover
-            border: none
+	&_active
+		background-color: $mc1
+		color: #FFFFFF
+		border: none
+		&:hover
+			border: none
 
-    &__content
-        margin-top: 60px
-        
-    &-card
-        padding: 20px 20px
-        width: 300px
-        min-height: 440px
-        border: 2px solid $c3-gray
+	&__content
+		margin-top: 60px
+		display: none
+		flex-wrap: wrap
+		justify-content: space-between
 
-        img
-            max-width: 100%
-            height: 200px
-            display: block
-            margin: 0 auto
+		&_active
+			display: flex
 
-        &__subtitle
-            margin-top: 15px
-            font-weight: 700
-            font-size: 16px
-            line-height: 25px
-            text-align: center
-            color: $c4-black
+	&-card
+		padding: 20px 20px
+		width: 300px
+		min-height: 440px
+		overflow: hidden
+		border: 2px solid $c3-gray
+		margin-bottom: 10px
+		// margin-right: 15px
 
-        &__descr
-            margin-top: 15px
-            text-align: center
-            font-weight: 300
-            font-size: 14px
-            line-height: 22px
-            color: $c4-black
+		img
+			max-width: 100%
+			height: 200px
+			display: block
+			margin: 0 auto
 
-        &__link
-            display: block
-            margin-top: 10px
-            font-weight: 500
-            font-size: 14px
-            line-height: 14px
-            text-align: center
-            color: $mc1
+		&__subtitle
+			margin-top: 15px
+			font-weight: 700
+			font-size: 16px
+			line-height: 25px
+			text-align: center
+			color: $c4-black
 
-        &__footer
-            display: flex
-            justify-content: space-between
-            align-items: flex-end
+		&__descr
+			margin-top: 15px
+			text-align: center
+			font-weight: 300
+			font-size: 14px
+			line-height: 22px
+			color: $c4-black
 
-        &__prices
-            display: flex
-            flex-direction: column
-        &__old-price
-            font-weight: 300
-            font-size: 14px
-            line-height: 14px
-            text-decoration-line: line-through
-            color: $c3-gray
-        &__price
-            margin-top: 2px
-            font-weight: 700
-            font-size: 20px
-            line-height: 20px
-            color: $c4-black
+		&__link
+			display: block
+			margin-top: 10px
+			font-weight: 500
+			font-size: 14px
+			line-height: 14px
+			text-align: center
+			text-transform: uppercase
+			color: $mc1
+			&:hover
+				color: $mc1
+
+		&__footer
+			display: flex
+			justify-content: space-between
+			align-items: flex-end
+
+		&__prices
+			display: flex
+			flex-direction: column
+		&__old-price
+			font-weight: 300
+			font-size: 14px
+			line-height: 14px
+			text-decoration-line: line-through
+			color: $c3-gray
+		&__price
+			margin-top: 2px
+			font-weight: 700
+			font-size: 20px
+			line-height: 20px
+			color: $c4-black
+		
+		&__wrapper
+			display: flex
+			width: calc( 200% + 40px )
+		
+		&__content
+			width: 50%
+			margin-right: 0px
+			transform: translateX(-100%)
+			transition: 0.5s all
+			&_active
+				margin-right: 20px
+				transform: translateX(0%)
+
+		&__information
+			position: relative
+			width: 50%
+			margin-left: 20px
+			transform: translateX(0%)
+			padding-right: 20px
+			padding-left: 19px
+			margin-bottom: 0
+			list-style-type: none
+			transition: 0.5s all
+			&_active
+				margin-left: 0px
+				transform: translateX(-100%)
+			li
+				position: relative
+				font-weight: 300
+				font-size: 14px
+				line-height: 21px
+				color: #555555
+				margin-bottom: 20px
+
+				&::before
+					content: ''
+					position: absolute
+					top: 8px
+					left: -14px
+					width: 5px
+					height: 5px
+					background-color: $mc1
+		
+		&__back
+			position: absolute
+			bottom: 0
+			left: 50%
+			transform: translateX(calc(-50% - 19px))
+			display: block
+			font-weight: 500
+			font-size: 14px
+			line-height: 14px
+			text-transform: uppercase
+			color: $mc1
+			&:hover
+				color: $mc1
