@@ -59,4 +59,16 @@ $(document).ready(function(){
     }
     toggleSlide('a.catalog-card__link');
     toggleSlide('a.catalog-card__back');
+
+    // Modal
+
+    $('[data-modal=consultation]').on('click', function(){
+      $('.overlay, #consultation').fadeIn();
+    });
+    $('.modal__close').on('click', function(){
+      $('.overlay, #consultation, #order, #sucsess').fadeOut();
+    });
+    $('.button_card').on('click', function(){
+      $('.overlay, #order').fadeIn();
+    });
 });
