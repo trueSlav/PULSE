@@ -65,10 +65,41 @@ $(document).ready(function(){
     $('[data-modal=consultation]').on('click', function(){
       $('.overlay, #consultation').fadeIn();
     });
+
     $('.modal__close').on('click', function(){
       $('.overlay, #consultation, #order, #sucsess').fadeOut();
     });
-    $('.button_card').on('click', function(){
-      $('.overlay, #order').fadeIn();
+
+    $('.button_card').each(function(i){
+      $(this).on('click', function(){
+        $('#order .modal__subtitle').text($('.catalog-card__subtitle').eq(i).text());
+        $('.overlay, #order').fadeIn();
+      });
     });
+
+    function valideForms(form){
+      $(form).validate({
+        rules: {
+          name: "required",
+          phone: "required",
+          email: {
+            required: true,
+            email: true
+          }
+        },
+        messages: {
+          name: "Введите Ваше имя",
+          phone: "Введите Ваш номер телефона",
+          email: {
+            required: "Введите Вашу почту",
+            email: "Не правильно введен почтовый адрес!"
+          }
+        }
+      });
+    }
+    valideForms('#main-form');
+    valideForms('#consultation form');
+    valideForms('#order-form');
+
+
 });
