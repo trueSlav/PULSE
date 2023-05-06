@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <section class="promo">
+    <section id="up" class="promo">
         <div class="container">
             <header class="header">
                 <a class="header__logo">
@@ -90,7 +90,7 @@
             </div>
             <form id="main-form" class="form-submit">
                 <input name="name" required type="text" placeholder="Ваше имя">
-                <input name="phone" required type="number" placeholder="Ваш телефон">
+                <input name="phone" required placeholder="Ваш телефон">
                 <input name="email" required type="email" placeholder="Ваш E-mail">
                 <button class="button button_form">заказать кОНСУЛЬТАЦИЮ</button>
             </form>
@@ -426,7 +426,7 @@
             <div class="modal__subtitle">и мы перезвоним вам в течении 10 минут</div>
             <form id="modal-form-first" class="form-submit form-submit_mt25">
                 <input name="name" type="text" placeholder="Ваше имя">
-                <input name="phone" type="number" placeholder="Ваш телефон">
+                <input name="phone" placeholder="Ваш телефон">
                 <input name="email" type="email" placeholder="Ваш E-mail">
                 <button class="button button_form">заказать кОНСУЛЬТАЦИЮ</button>
             </form>    
@@ -438,7 +438,7 @@
             <div class="modal__subtitle">Пульсометр Polar FT1</div>
             <form id="order-form" class="form-submit form-submit_mt25">
                 <input name="name"  type="text" placeholder="Ваше имя">
-                <input name="phone"  type="number" placeholder="Ваш телефон">
+                <input name="phone" placeholder="Ваш телефон">
                 <input name="email"  type="email" placeholder="Ваш E-mail">
                 <button class="button button_form">Купить</button>
             </form>    
@@ -449,13 +449,15 @@
             <div class="modal__title">Спасибо за вашу заявку!</div>            
             <div class="modal__subtitle">Наш менеджер свяжется с вами в ближайшее время!</div>   
         </div>
-
     </div>
+    
+    <a class="pageup" href="#up"><img src="images/icons/circle-chevron-up-solid.svg" alt="up"></a>
 
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
